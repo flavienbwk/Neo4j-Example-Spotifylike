@@ -59,9 +59,17 @@ Everything will be stored under `./DATASET_PROCESS/ASCII_FILES/`.
 Neo4j allows to import CSV files.
 But as the first script outputs only a ASCII text file, we have to format it in JSON and then in CSV.
 
+/!\ This script is experimental. You might experience an invalid JSON file as some songs have no  /!\
 <pre>
 $> sh ./script_convert_ascii_to_json.sh
 </pre>
 Everything will be stored under `./DATASET_PROCESS/JSON_FILES/`.
 
-This script as well concatenate the JSON files into a single file (in `./ALL_DATA_JSON.json`) so we will easily convert it to CSV.
+This script as well concatenate the JSON files into a single file **(in `./ALL_DATA_JSON.json`)** so we will easily convert it to CSV.
+
+### 4. Convert JSON to CSV.
+
+To convert the JSON we've outputed to CSV, we use an excellent website :
+- `https://codebeautify.org/json-to-csv`
+
+Click the "Browse" button, select `./ALL_DATA_JSON.json` and click "Download".
