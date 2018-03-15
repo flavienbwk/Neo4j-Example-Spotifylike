@@ -37,7 +37,7 @@ We store everything in the same directory to make the following scripts easier t
 $> find -name "*.h5" -exec cp {} ./DATASET_PROCESS/H5_FILES/ \;
 </pre>
 
-The dataset provide the data of exactly 10 000 songs.
+The dataset provide the data of exactly `10 000` songs.
 To be sure everything is in there, execute :
 
 <pre>
@@ -47,3 +47,21 @@ $> ls ./DATASET_PROCESS/H5_FILES/ | wc -l
 ### 2. Convert .h5 files in a ASCII format text file.
 
 A Python script allows us to extract the data from the dataset, with the information we want (title, artists related, play time etc...).
+Execute `script_python_h5_to_ascii.sh` to run the script that translate `.h5` files to human-readable ASCII files.
+
+<pre>
+$> sh ./script_python_h5_to_ascii.sh
+</pre>
+Everything will be stored under `./DATASET_PROCESS/ASCII_FILES/`.
+
+### 3. Convert ASCII format text file to JSON (and then CSV).
+
+Neo4j allows to import CSV files.
+But as the first script outputs only a ASCII text file, we have to format it in JSON and then in CSV.
+
+<pre>
+$> sh ./script_convert_ascii_to_json.sh
+</pre>
+Everything will be stored under `./DATASET_PROCESS/JSON_FILES/`.
+
+This script as well concatenate the JSON files into a single file (in `./ALL_DATA_JSON.json`) so we will easily convert it to CSV.
