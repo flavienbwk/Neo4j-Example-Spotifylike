@@ -4,7 +4,9 @@ The challenge is to create a music recommendation algorithm, using a very large 
 
 **Take the time to read what I wrote here so you will understand what you do.**
 
-# Installation procedure
+# Formatting the data for Neo4j
+
+Datasets are a bunch of data in a certain form, but we have to convert them to match what Neo4j wants to ingest.
 
 ## Dataset :
 You can first download the list of the songs.
@@ -59,7 +61,7 @@ Everything will be stored under `./DATASET_PROCESS/ASCII_FILES/`.
 Neo4j allows to import CSV files.
 But as the first script outputs only a ASCII text file, we have to format it in JSON and then in CSV.
 
-/!\ This script is experimental. You might experience an invalid JSON file as some songs have no  /!\
+/!\ This script is experimental. You might experience an invalid JSON file as some songs have no title or special characters./!\
 <pre>
 $> sh ./script_convert_ascii_to_json.sh
 </pre>
@@ -73,3 +75,5 @@ To convert the JSON we've outputed to CSV, we use an excellent website :
 - `https://codebeautify.org/json-to-csv`
 
 Click the "Browse" button, select `./ALL_DATA_JSON.json` and click "Download".
+
+Don't forget to add the file on your server with the name : `ALL_DATA_CSV.csv`.
