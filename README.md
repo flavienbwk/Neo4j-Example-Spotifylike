@@ -9,13 +9,10 @@ The challenge is to create a music recommendation algorithm, using a very large 
 Datasets are a bunch of data in a certain form, but we have to convert them to match what Neo4j wants to ingest.
 
 ## Dataset :
-You can first download the data list of the songs.
-
-- Direct download: `http://static.echonest.com/millionsongsubset_full.tar.gz`
-
-Then, extract the files :
+You can first download the data list of the songs. Then, extract it.
 
 <pre>
+$> wget http://static.echonest.com/millionsongsubset_full.tar.gz
 $> tar -xvzf millionsongsubset_full.tar.gz
 </pre>
 
