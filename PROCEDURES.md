@@ -22,11 +22,13 @@ Theses relationships are expressed in Cypher-like so everybody can understand.
 
 ## Users relationships
 
-(user)-[:LIKES]->(music) # User likes music.
-(user)-[:DLIKE]->(music) # User does not like music.
-(user)-[:PLAYED {count:129}]->(music) # User has played X times the music (129 in this case).
+> (user)-[:LIKES]->(music) # User likes music.
+> (user)-[:DLIKE]->(music) # User does not like music.
+> (user)-[:PLAYED {count:129}]->(music) # User has played X times the music (129 in this case).
 
-(user)-[:LIKES]->(artist) # User likes artist.
+> (user)-[:LIKES]->(artist) # User likes artist.
 
-(user)-[:LIKES]->(genre) # User likes genre.
-(user)-[:DLIKE]->(genre) # User doesn't like genre.
+> (user)-[:LIKES]->(genre) # User likes genre.
+> (user)-[:DLIKE]->(genre) # User doesn't like genre.
+
+## 
