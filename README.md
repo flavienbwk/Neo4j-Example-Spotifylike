@@ -17,7 +17,6 @@ Then, extract the files :
 
 <pre>
 $> tar -xvzf millionsongsubset_full.tar.gz
-$> cd MillionSongSubset/
 </pre>
 
 This is a ressource allowing us to get the list of the titles of the songs, along with many (many) data such as the bitrates of the musics or the related artists of the artist who created the music.
@@ -36,7 +35,7 @@ The dataset downloaded previously comes with the `.h5` files stored under multip
 We store everything in the same directory to make the following scripts easier to process.
 
 <pre>
-$> find -name "*.h5" -exec cp {} ./tools/DATASET_PROCESS/H5_FILES/ \;
+$> find -name "./MillionSongSubset/*.h5" -exec cp {} ./tools/DATASET_PROCESS/H5_FILES/ \;
 </pre>
 
 The dataset provides the data of exactly `10 000` songs.
