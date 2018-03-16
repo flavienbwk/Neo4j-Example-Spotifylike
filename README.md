@@ -9,7 +9,7 @@ The challenge is to create a music recommendation algorithm, using a very large 
 Datasets are a bunch of data in a certain form, but we have to convert them to match what Neo4j wants to ingest.
 
 ## Dataset :
-You can first download the list of the songs.
+You can first download the data list of the songs.
 
 - Direct download: `http://static.echonest.com/millionsongsubset_full.tar.gz`
 
@@ -22,7 +22,7 @@ $> cd MillionSongSubset/
 
 This is a ressource allowing us to get the list of the titles of the songs, along with many (many) data such as the bitrates of the musics or the related artists of the artist who created the music.
 
-All of that is stored inside `.h5` files.
+Each data of a song is stored inside its `.h5` file.
 This file format contains a folder and file tree containing data. 
 Roughly speaking, these files contain batches of data in tables (as in Excel).
 
@@ -43,7 +43,7 @@ The dataset provide the data of exactly `10 000` songs.
 To be sure everything is in there, execute :
 
 <pre>
-$> ls ./DATASET_PROCESS/H5_FILES/ | wc -l
+$> ls ./tools/DATASET_PROCESS/H5_FILES/ | wc -l
 </pre>
 
 ### 2. Convert .h5 files in a ASCII format text file.
@@ -52,7 +52,7 @@ A Python script allows us to extract the data from the dataset, with the informa
 Execute `script_python_h5_to_ascii.sh` to run the script that translate `.h5` files to human-readable ASCII files.
 
 <pre>
-$> sh ./script_python_h5_to_ascii.sh
+$> sh ./tools/script_python_h5_to_ascii.sh
 </pre>
 Everything will be stored under `./DATASET_PROCESS/ASCII_FILES/`.
 
@@ -63,7 +63,7 @@ But as the first script outputs only a ASCII text file, we have to format it in 
 
 /!\ This script is experimental. You might experience an invalid JSON file as some songs have no title or special characters./!\
 <pre>
-$> sh ./script_convert_ascii_to_json.sh
+$> sh ./tools/script_convert_ascii_to_json.sh
 </pre>
 Everything will be stored under `./DATASET_PROCESS/JSON_FILES/`.
 
@@ -78,9 +78,22 @@ Click the "Browse" button, select `./ALL_DATA_JSON.json` and click "Download".
 
 Don't forget to add the file on your server with the name : `ALL_DATA_CSV.csv`.
 
+### 5. Get the list of the artist IDs in a single CSV file.
+
+Get this file we've compiled inside :
+<pre>
+$> ./data/processed/artists_ids.csv
+</pre>
+
+We've stepped into several problems while importing the csv data with our first algorithm.
+So to have a cleaner and slimmer import, we had to list the artists IDs in a single node to then link the _similar artists_ of a music, to the music.
+**Here are the steps to get the artist IDs:**
+
+Inside the downloaded song list directory : (by default `./MillionSongSubset/`), is a file named `./MillionSongSubset/`
+
 <hr/>
 
 # Installing Neo4j
 
-Please follow [this tutorial](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/) to install Neo4j.
+You can follow [this official tutorial](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/) to install Neo4j.
 
