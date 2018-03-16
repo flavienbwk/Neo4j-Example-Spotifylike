@@ -36,7 +36,7 @@ The dataset downloaded previously comes with the `.h5` files stored under multip
 We store everything in the same directory to make the following scripts easier to process.
 
 <pre>
-$> find -name "*.h5" -exec cp {} ./DATASET_PROCESS/H5_FILES/ \;
+$> find -name "*.h5" -exec cp {} ./tools/DATASET_PROCESS/H5_FILES/ \;
 </pre>
 
 The dataset provides the data of exactly `10 000` songs.
