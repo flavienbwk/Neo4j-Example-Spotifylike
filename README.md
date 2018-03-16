@@ -46,10 +46,10 @@ $> ls ./tools/DATASET_PROCESS/H5_FILES/ | wc -l
 ### 2. Convert .h5 files in a ASCII format text file.
 
 A Python script allows us to extract the data from the dataset, with the information we want (title, artists related, play time etc...).
-Execute `script_python_h5_to_ascii.sh` to run the script that translate `.h5` files to human-readable ASCII files.
+Execute `h5_to_ascii.sh` to run the script that translate `.h5` files to human-readable ASCII files.
 
 <pre>
-$> sh ./tools/script_python_h5_to_ascii.sh
+$> sh ./tools/h5_to_ascii.sh
 </pre>
 Everything will be stored under `./tools/DATASET_PROCESS/ASCII_FILES/`.
 
