@@ -166,3 +166,36 @@ MERGE (a)-[:HAS_GENRE]->(g)
 
 Well, it is not just about importing the song list. The fact is that each music has a "similar_artists" property, which is really heavy and will overload our server for no reason.
 To fix this, we will use the `Artist` nodes, and add a relation : `music OWNED_BY artist`. 
+
+<pre>
+LOAD CSV WITH HEADERS FROM "file:/ALL_DATA_CSV.csv" AS csvLine
+
+// Creating the music node.
+MERGE (m:Music {title: csvLine.title, duration: csvLine.duration})
+WITH m, csvLine
+MATCH (a:Artist {artist_id: csvLine.artist_id})
+MERGE (a)-[:OWNS]->(m)
+
+MERGE (y:Year {year: csvLine.year})
+MERGE (m)-[:RELEASED_IN]->(y)
+
+MERGE (al:Album {album: csvLine.album})
+MERGE (m)-[:IN]->(al)
+MERGE (a)-[:CREATED]->(al)
+
+WITH a, m, csvLine
+
+UNWIND split(csvLine.all_terms, ';') as genre_instance
+MATCH (g:Genre {name: genre_instance})
+MERGE (m)-[:HAS_GENRE]->(g)
+
+WITH a, m, csvLine
+
+UNWIND split(csvLine.similar_artists, ';') as asi
+MATCH (as:Artist {artist_id: asi})
+MERGE (a)-[:HAS_GENRE]->(as)
+
+RETURN count(*)
+
+//LIMIT 5;
+</pre>
