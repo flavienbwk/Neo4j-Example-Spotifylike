@@ -64,7 +64,7 @@ $> sh ./tools/ascii_to_json.sh
 </pre>
 Everything will be stored under `./tools/DATASET_PROCESS/JSON_FILES/`.
 
-This script as well concatenate the JSON files into a single file **(in `./ALL_DATA_JSON.json`)** so we will easily convert it to CSV.
+This script as well concatenate the JSON files into a single file **(in `./tools/DATASET_PROCESS/JSON_FILES/ALL_DATA_JSON.json`)** so we will easily convert it to CSV.
 
 ### 4. Convert JSON to CSV.
 
