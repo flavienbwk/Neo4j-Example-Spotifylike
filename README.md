@@ -127,7 +127,7 @@ Access your browser instance of Neo4j with the following link.
 Replace _localhost_ by your IP address if it is necessary.
 
 <pre>
-$> http://localhost:7474/browser
+http://localhost:7474/browser
 </pre>
 
 ## Import the artists_ids.csv file.
