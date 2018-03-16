@@ -120,8 +120,8 @@ $> service neo4j restart
 
 # Fill the database :
 
-All the queries below are written in Cypher.
-_Cypher_ is to _Neo4j" what _SQL_ is to _MySQL_.
+All the queries below are written in _Cypher_.
+_Cypher_ is to _Neo4j_ what _SQL_ is to _MySQL_.
 
 Access your browser instance of Neo4j with the following link.
 Replace _localhost_ by your IP address if it is necessary.
@@ -131,5 +131,10 @@ http://localhost:7474/browser
 </pre>
 
 ## Import the artists_ids.csv file.
+
+Replace */home/user*
+<pre>
+LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/processed/artists_ids.csv" AS row WITH row
+</pre>
 
 ## Import the songs data.
