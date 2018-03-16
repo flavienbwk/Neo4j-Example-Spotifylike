@@ -54,7 +54,7 @@ Execute `script_python_h5_to_ascii.sh` to run the script that translate `.h5` fi
 <pre>
 $> sh ./tools/script_python_h5_to_ascii.sh
 </pre>
-Everything will be stored under `./DATASET_PROCESS/ASCII_FILES/`.
+Everything will be stored under `./tools/DATASET_PROCESS/ASCII_FILES/`.
 
 ### 3. Convert ASCII format text file to JSON (and then CSV).
 
@@ -65,7 +65,7 @@ But as the first script outputs only a ASCII text file, we have to format it in 
 <pre>
 $> sh ./tools/script_convert_ascii_to_json.sh
 </pre>
-Everything will be stored under `./DATASET_PROCESS/JSON_FILES/`.
+Everything will be stored under `./tools/DATASET_PROCESS/JSON_FILES/`.
 
 This script as well concatenate the JSON files into a single file **(in `./ALL_DATA_JSON.json`)** so we will easily convert it to CSV.
 
