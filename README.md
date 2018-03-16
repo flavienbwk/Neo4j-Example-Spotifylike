@@ -87,9 +87,13 @@ $> ./data/processed/artists_ids.csv
 
 We've stepped into several problems while importing the csv data with our first algorithm.
 So to have a cleaner and slimmer import, we had to list the artists IDs in a single node to then link the _similar artists_ of a music, to the music.
+
 **Here are the steps to get the artist IDs:**
 
-Inside the downloaded song list directory : (by default `./MillionSongSubset/`), is a file named `./MillionSongSubset/`
+Inside the downloaded song list directory : (by default `./MillionSongSubset/`), is a file named `./MillionSongSubset/subset_artist_similarity.db`.
+This file is a SQLite database file.
+
+We've just browsed this database with the [SQLite browser](http://sqlitebrowser.org/) and used the function "export", selecting only the `artist_id` column.
 
 <hr/>
 
