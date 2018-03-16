@@ -27,9 +27,9 @@ Theses relationships are expressed in Cypher-like so everybody can understand.
 > (user)-[:DLIKE]->(music) # User does not like music.
 
 > (user)-[:PLAYED {count:129}]->(music) # User has played X times the music (129 in this case).
-<br/><br/>
+
 > (user)-[:LIKES]->(artist) # User likes artist.
-<br/><br/>
+
 > (user)-[:LIKES]->(genre) # User likes genre.
 
 > (user)-[:DLIKE]->(genre) # User doesn't like genre.
