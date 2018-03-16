@@ -77,17 +77,19 @@ Don't forget to add the file on your server with the name : `ALL_DATA_CSV.csv`.
 
 ### 5. Get the list of the artist IDs in a single CSV file.
 
-Get this file we've compiled inside :
+Get these files we've compiled inside :
 <pre>
-$> ./data/processed/artists_ids.csv
+./data/processed/artists_ids.csv
+./data/processed/genres.csv
 </pre>
 
 We've stepped into several problems while importing the csv data with our first algorithm.
 So to have a cleaner and slimmer import, we had to list the artists IDs in a single node to then link the _similar artists_ of a music, to the music.
+Same thing for the genres.
 
 **Here are the steps to get the artist IDs:**
 
-Inside the downloaded song list directory : (by default `./MillionSongSubset/`), is a file named `./MillionSongSubset/subset_artist_similarity.db`.
+Inside the downloaded song list directory : (by default `./MillionSongSubset/`), is a file named `./MillionSongSubset/subset_artist_term.db`.
 This file is a SQLite database file.
 
 We've just browsed this database with the [SQLite browser](http://sqlitebrowser.org/) and used the function "export", selecting only the `artist_id` column.
@@ -137,5 +139,5 @@ CREATE (a:Artist { artist_id: csvLine.artist_id })
 
 ## Import the songs data.
 
-Well, it is not just about importing the song list. The fact is that each music has a "similar_artists" property, which is really heavy and will overload our server for nothing.
+Well, it is not just about importing the song list. The fact is that each music has a "similar_artists" property, which is really heavy and will overload our server for no reason.
 To fix this, we will use the `Artist` nodes, and add a relation : `music OWNED_BY artist`. 
