@@ -77,3 +77,10 @@ To convert the JSON we've outputed to CSV, we use an excellent website :
 Click the "Browse" button, select `./ALL_DATA_JSON.json` and click "Download".
 
 Don't forget to add the file on your server with the name : `ALL_DATA_CSV.csv`.
+
+<hr/>
+
+# Installing Neo4j
+
+Please follow [this tutorial](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/) to install Neo4j.
+
