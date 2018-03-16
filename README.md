@@ -121,7 +121,14 @@ $> service neo4j restart
 # Fill the database :
 
 All the queries below are written in Cypher.
-"Cypher" is to "Neo4j" what "SQL" is to "MySQL".
+_Cypher_ is to _Neo4j" what _SQL_ is to _MySQL_.
+
+Access your browser instance of Neo4j with the following link.
+Replace _localhost_ by your IP address if it is necessary.
+
+<pre>
+$> http://localhost:7474/browser
+</pre>
 
 ## Import the artists_ids.csv file.
 
