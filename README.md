@@ -120,4 +120,9 @@ $> service neo4j restart
 
 # Fill the database :
 
+All the queries below are written in Cypher.
+"Cypher" is to "Neo4j" what "SQL" is to "MySQL".
 
+## Import the artists_ids.csv file.
+
+## Import the songs data.
