@@ -109,8 +109,8 @@ Inside `/etc/neo4j/neo4j.conf` :
 dbms.security.auth_enabled=false
 dbms.security.allow_csv_import_from_file_urls=true
 
-# Modify :
-dbms.directories.import=/
+# Comment :
+#dbms.directories.import=/var/lib/neo4j/import
 </pre>
 
 Restart Neo4j :
@@ -132,7 +132,7 @@ http://localhost:7474/browser
 
 ## Import the artists_ids.csv file.
 
-Replace */home/user*
+Replace */home/user* by the absolute file where you've cloned this git repository.
 <pre>
 LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/processed/artists_ids.csv" AS row WITH row
 </pre>
