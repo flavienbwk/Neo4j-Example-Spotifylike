@@ -130,11 +130,12 @@ Replace _localhost_ by your IP address if it is necessary.
 http://localhost:7474/browser
 </pre>
 
-## Import the artists_ids.csv file.
+## Import the _artists_ids.csv_ file.
 
 Replace */home/user* by the absolute file where you've cloned this git repository.
 <pre>
-LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/processed/artists_ids.csv" AS row WITH row
+LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/processed/artists_id.csv" AS csvLine
+CREATE (a:Artist { artist_id: csvLine.artist_id })
 </pre>
 
 ## Import the songs data.
