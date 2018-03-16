@@ -137,5 +137,5 @@ CREATE (a:Artist { artist_id: csvLine.artist_id })
 
 ## Import the songs data.
 
-Well, it is not just about importing a songs list. The fact is that each music has a "similar_artists" property, which is really heavy and will overload our server for nothing.
+Well, it is not just about importing the song list. The fact is that each music has a "similar_artists" property, which is really heavy and will overload our server for nothing.
 To fix this, we will use the `Artist` nodes, and add a relation : `music OWNED_BY artist`. 
