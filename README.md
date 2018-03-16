@@ -113,6 +113,11 @@ dbms.security.allow_csv_import_from_file_urls=true
 dbms.directories.import=/
 </pre>
 
+Restart Neo4j :
 <pre>
 $> service neo4j restart
 </pre>
+
+# Fill the database :
+
+
