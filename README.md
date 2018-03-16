@@ -175,27 +175,28 @@ MERGE (m:Music {title: csvLine.title, duration: csvLine.duration})
 WITH m, csvLine
 MATCH (a:Artist {artist_id: csvLine.artist_id})
 MERGE (a)-[:OWNS]->(m)
+SET a.name = csvLine.artist_name
 
 MERGE (y:Year {year: csvLine.year})
 MERGE (m)-[:RELEASED_IN]->(y)
 
-MERGE (al:Album {album: csvLine.album})
+MERGE (al:Album {name: csvLine.album})
 MERGE (m)-[:IN]->(al)
 MERGE (a)-[:CREATED]->(al)
 
 WITH a, m, csvLine
 
-UNWIND split(csvLine.all_terms, ';') as genre_instance
+UNWIND split(csvLine.all_terms, ',') as genre_instance
 MATCH (g:Genre {name: genre_instance})
 MERGE (m)-[:HAS_GENRE]->(g)
 
 WITH a, m, csvLine
 
-UNWIND split(csvLine.similar_artists, ';') as asi
+UNWIND split(csvLine.similar_artists, ',') as asi
 MATCH (as:Artist {artist_id: asi})
-MERGE (a)-[:HAS_GENRE]->(as)
+MERGE (a)-[:SIMILAR_TO]->(as)
 
 RETURN count(*)
 
-//LIMIT 5;
+// LIMIT 5; // Limit the query if you computer is not really powerful.
 </pre>
