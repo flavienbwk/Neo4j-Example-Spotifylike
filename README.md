@@ -137,6 +137,16 @@ LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/proce
 CREATE (a:Artist { artist_id: csvLine.artist_id })
 </pre>
 
+## Import the *genres.csv* file.
+
+Replace */home/user* by the absolute file where you've cloned this git repository.
+<pre>
+LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/processed/genres.csv" AS csvLine
+CREATE (g:Genre { name: csvLine.mbtag })
+</pre>
+
+## Bind the artists genre to the artists.
+
 ## Import the songs data.
 
 Well, it is not just about importing the song list. The fact is that each music has a "similar_artists" property, which is really heavy and will overload our server for no reason.
