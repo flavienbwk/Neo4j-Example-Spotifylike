@@ -129,6 +129,12 @@ Replace _localhost_ by your IP address if it is necessary.
 http://localhost:7474/browser
 </pre>
 
+Just before continuing, we have to increase the limit of 300 nodes display for Neo4j using this command in the Neo4j console :
+Change `1000` by the number you want. But careful : it may make your browser crash.
+<pre>
+:config initialNodeDisplay: 1000
+</pre>
+
 ## Import the *artists_id.csv* file.
 
 Replace */home/user* by the absolute file where you've cloned this git repository.
@@ -151,8 +157,8 @@ For this, we will use the `./data/processed/artist_genre.csv` file.
 
 Replace */home/user* by the absolute file where you've cloned this git repository.
 <pre>
-LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/processed/artist_genre.csv" AS csvLine
-MATCH (a:Artist {artist_id:csvLine.artist_id}, g:Genre {name: csvLine.mbtag})
+LOAD CSV WITH HEADERS FROM "file:/artist_genre.csv" AS csvLine
+MATCH (a:Artist {artist_id:csvLine.artist_id}), (g:Genre {name: csvLine.mbtag})
 CREATE (a)-[:HAS_GENRE]->(g)
 </pre>
 
