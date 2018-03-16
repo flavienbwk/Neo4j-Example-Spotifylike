@@ -147,9 +147,13 @@ CREATE (g:Genre { name: csvLine.mbtag })
 
 ## Linking artists' gender to artists.
 
+For this, we will use the `./data/processed/artist_genre.csv` file.
+
 Replace */home/user* by the absolute file where you've cloned this git repository.
 <pre>
-
+LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/processed/artist_genre.csv" AS csvLine
+MATCH (a:Artist {artist_id:csvLine.artist_id}, g:Genre {name: csvLine.mbtag})
+CREATE (a)-[:HAS_GENRE]->(g)
 </pre>
 
 ## Import the songs data.
