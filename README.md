@@ -39,7 +39,7 @@ We store everything in the same directory to make the following scripts easier t
 $> find -name "*.h5" -exec cp {} ./DATASET_PROCESS/H5_FILES/ \;
 </pre>
 
-The dataset provide the data of exactly `10 000` songs.
+The dataset provides the data of exactly `10 000` songs.
 To be sure everything is in there, execute :
 
 <pre>
@@ -101,3 +101,14 @@ We've just browsed this database with the [SQLite browser](http://sqlitebrowser.
 
 You can follow [this official tutorial](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/) to install Neo4j.
 
+## Configuration of Neo4j :
+
+Inside `/etc/neo4j/neo4j.conf` :
+<pre>
+# Uncomment :
+dbms.security.auth_enabled=false
+dbms.security.allow_csv_import_from_file_urls=true
+
+# Modify :
+dbms.directories.import=/
+</pre>

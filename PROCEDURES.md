@@ -1,6 +1,6 @@
 # Procedures
 
-This file describes the different features of the application.
+This file describes the different features of the website application.
 We focus on the algorithm that decides which music the user will enjoy most.
 As such, design is not a priority and the purpose of this git directory is to help you understand graph databases with Neo4j, on a concrete example.
 
