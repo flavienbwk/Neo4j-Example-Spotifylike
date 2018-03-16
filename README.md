@@ -99,7 +99,7 @@ We've just browsed this database with the [SQLite browser](http://sqlitebrowser.
 
 # Installing Neo4j
 
-You can follow [this official tutorial](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/) to install Neo4j.
+You can follow [this official tutorial](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/) to install Neo4j for your Debian machine.
 
 ## Configuration of Neo4j :
 
@@ -111,4 +111,8 @@ dbms.security.allow_csv_import_from_file_urls=true
 
 # Modify :
 dbms.directories.import=/
+</pre>
+
+<pre>
+$> service neo4j restart
 </pre>
