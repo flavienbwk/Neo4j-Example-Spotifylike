@@ -159,7 +159,7 @@ Replace */home/user* by the absolute file where you've cloned this git repositor
 <pre>
 LOAD CSV WITH HEADERS FROM "file:/artist_genre.csv" AS csvLine
 MATCH (a:Artist {artist_id:csvLine.artist_id}), (g:Genre {name: csvLine.mbtag})
-CREATE (a)-[:HAS_GENRE]->(g)
+MERGE (a)-[:HAS_GENRE]->(g)
 </pre>
 
 ## Import the songs data.
