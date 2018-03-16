@@ -13,7 +13,7 @@ You can first download the data list of the songs.
 
 - Direct download: `http://static.echonest.com/millionsongsubset_full.tar.gz`
 
-Then, extract the file :
+Then, extract the files :
 
 <pre>
 $> tar -xvzf millionsongsubset_full.tar.gz
