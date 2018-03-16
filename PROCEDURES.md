@@ -33,5 +33,3 @@ Theses relationships are expressed in Cypher-like so everybody can understand.
 > (user)-[:LIKES]->(genre) # User likes genre.
 
 > (user)-[:DLIKE]->(genre) # User doesn't like genre.
-
-## 
