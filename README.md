@@ -60,7 +60,7 @@ But as the first script outputs only a ASCII text file, we have to format it in 
 
 :warning: This script is experimental. You might experience an invalid JSON file as some songs have no title or special characters.
 <pre>
-$> sh ./tools/script_convert_ascii_to_json.sh
+$> sh ./tools/ascii_to_json.sh
 </pre>
 Everything will be stored under `./tools/DATASET_PROCESS/JSON_FILES/`.
 
