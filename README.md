@@ -61,7 +61,7 @@ Everything will be stored under `./DATASET_PROCESS/ASCII_FILES/`.
 Neo4j allows to import CSV files.
 But as the first script outputs only a ASCII text file, we have to format it in JSON and then in CSV.
 
-<img src="https://image.flaticon.com/icons/svg/148/148768.svg" /> This script is experimental. You might experience an invalid JSON file as some songs have no title or special characters.
+<img width="16px" src="https://image.flaticon.com/icons/svg/148/148768.svg" /> This script is experimental. You might experience an invalid JSON file as some songs have no title or special characters.
 <pre>
 $> sh ./tools/script_convert_ascii_to_json.sh
 </pre>
