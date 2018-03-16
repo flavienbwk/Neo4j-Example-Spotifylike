@@ -130,7 +130,7 @@ Replace _localhost_ by your IP address if it is necessary.
 http://localhost:7474/browser
 </pre>
 
-## Import the _artists_ids.csv_ file.
+## Import the *artists_id.csv* file.
 
 Replace */home/user* by the absolute file where you've cloned this git repository.
 <pre>
