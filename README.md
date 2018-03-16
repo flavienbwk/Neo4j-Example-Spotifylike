@@ -145,7 +145,12 @@ LOAD CSV WITH HEADERS FROM "file:/home/user/Neo4j-Example-Spotifylike/data/proce
 CREATE (g:Genre { name: csvLine.mbtag })
 </pre>
 
-## Bind the artists genre to the artists.
+## Linking artists' gender to artists.
+
+Replace */home/user* by the absolute file where you've cloned this git repository.
+<pre>
+
+</pre>
 
 ## Import the songs data.
 
