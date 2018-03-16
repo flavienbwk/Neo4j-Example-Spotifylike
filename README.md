@@ -13,9 +13,10 @@ You can first download the data list of the songs. Then, extract it.
 
 <pre>
 $> wget http://static.echonest.com/millionsongsubset_full.tar.gz
-$> tar -xvzf millionsongsubset_full.tar.gz _# This creates a "./MillionSongSubset" directory._
+$> tar -xvzf millionsongsubset_full.tar.gz
 </pre>
 
+This will create a `./MillionSongSubset` directory.
 This is a ressource allowing us to get the list of the titles of the songs, along with many (many) data such as the bitrates of the musics or the related artists of the artist who created the music.
 
 Each data of a song is stored inside its `.h5` file.
