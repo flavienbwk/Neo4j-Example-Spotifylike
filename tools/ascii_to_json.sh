@@ -1,9 +1,16 @@
-n=0
-echo "[" > /ALL/FILES/FICHIERS_JSON/FATJSON.json
-for file in `ls /ALL_FILES/FICHIERS_ASCII/`; do
-    php convert_ascii_to_json.php /ALL_FILES/FICHIERS_ASCII/$file >> /ALL_FILES/FICHIERS_JSON/FATJSON.json
-    n=$((n+1))
-    echo $n
-    echo "," >> /ALL_FILES/FICHIERS_JSON/FATJSON.json
+i=0
+echo "[" > ./tools/DATASET_PROCESS/JSON_FILES/ALL_DATA_JSON.json
+for file in `ls ./tools/DATASET_PROCESS/ASCII_FILES/`; do
+    result=$(php ./tools/convert_ascii_to_json.php ./tools/DATASET_PROCESS/ASCII_FILES/$file)
+    if [ ! -z "$result" ] && [ "$result" != "{}" ]; then
+    	if [ $i != 0 ]; then
+		echo "," >> ./tools/DATASET_PROCESS/JSON_FILES/ALL_DATA_JSON.json
+	fi
+	echo $result >> ./tools/DATASET_PROCESS/JSON_FILES/ALL_DATA_JSON.json
+    else
+	echo "Empty or invalid file. "
+    fi
+    i=$((i+1))
+    echo $i
 done
-echo "]" >> /ALL_FILES/FICHIERS_JSON/FATJSON.json
+echo "]" >> ./tools/DATASET_PROCESS/JSON_FILES/ALL_DATA_JSON.json
