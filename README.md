@@ -201,4 +201,6 @@ RETURN count(*)
 // LIMIT 5; // Limit the query if you computer is not really powerful.
 </pre>
 
-<img src="https://imgur.com/Ugyh3W4"/>
+<center>
+<img src="https://i.imgur.com/Ugyh3W4.png?1"/>
+</center>
