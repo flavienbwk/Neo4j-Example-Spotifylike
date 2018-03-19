@@ -201,6 +201,12 @@ RETURN count(*)
 // LIMIT 5; // Limit the query if you computer is not really powerful.
 </pre>
 
+:information_source: You might experience some problems while importing a large quantity of data. 
+Use the following command at the beginning of the previous command to make it work. It will persist the data every `50` entity processed.
+<pre>
+USING PERIODIC COMMIT 50
+</pre>
+
 <p align="center">
 	<img src="https://i.imgur.com/Ugyh3W4.png?1"/>
 </p>
