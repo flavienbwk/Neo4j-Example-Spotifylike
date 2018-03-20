@@ -207,6 +207,11 @@ Use the following command at the beginning of the previous command to make it wo
 USING PERIODIC COMMIT 50
 </pre>
 
+:information_source: You might experience bugs of memory while importing the data. In `/etc/neo4j/neo4j.conf`, uncomment and modify the following line.
+<pre>
+dbms.memory.heap.max_size=1024m
+</pre>
+
 <p align="center">
 	<img src="https://i.imgur.com/UzHJN6s.png"/>
 </p>
