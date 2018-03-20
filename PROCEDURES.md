@@ -20,7 +20,7 @@ As such, design is not a priority and the purpose of this git directory is to he
 Nodes have relationships, as for example for users.
 These relationships are used in the API.
 
-Please check the API documentation in `/API.md` of this git repository.
+Please check the API documentation in `/API.md` of this Github repository.
 
 <p align="center">
         <img src="https://i.imgur.com/UzHJN6s.png"/>
