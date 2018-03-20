@@ -634,3 +634,99 @@ Parameters to send :
 }
 ```
 
+### Add a music count for user.
+
+| Endpoint | Method |
+| :-------------: |:-------------:|
+| `/api/user/music/listened` | POST |
+
+Parameters to send :
+
+| user_id | music_id |
+| :-----: | :---: |
+| _(int)_ | _(string)_ |
+
+
+```
+{
+	"error": false,
+    "message": "",
+    "details": [
+    	{
+        	"id": (int),
+            "title": (string),
+            "duration": (int),
+            "count": (int)
+        }
+    ]
+}
+```
+
+### Get similar users for the user.
+
+This way, the user can have himself if there are other users who have the same musical tastes as him.
+
+| Endpoint | Method |
+| :-------------: |:-------------:|
+| `/api/user/similars` | POST |
+
+Parameters to send :
+
+| user_id |
+| :-----: |
+| _(int)_ |
+
+
+```
+{
+	"error": false,
+    "message": "",
+    "details": [
+    	{
+        	"id": (int),
+            "username": (string),
+            "email": (string)
+        },
+    	{
+        	"id": (int),
+            "username": (string),
+            "email": (string)
+        }
+        [...]
+    ]
+}
+```
+
+
+### Get similar artists of an artist.
+
+
+| Endpoint | Method |
+| :-------------: |:-------------:|
+| `/api/artist/similars` | POST |
+
+Parameters to send :
+
+| artist_id |
+| :-----: |
+| _(string)_ |
+
+
+```
+{
+	"error": false,
+    "message": "",
+    "details": [
+    	{
+        	"id": (int),
+            "name": (string)
+        },
+    	{
+        	"id": (int),
+            "name": (string)
+        }
+        [...]
+    ]
+}
+```
+
