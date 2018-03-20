@@ -395,6 +395,72 @@ Parameters to send :
 :information_source: Cypher command :
 `MATCH (a:Artist {artist_id: {artist_id}})-[:OWNS]->(m:Music) RETURN m`
 
+### Get artist albums.
+
+| Endpoint | Method |
+| :-------------: |:-------------:|
+| `/api/artist/albums` | POST |
+
+Parameters to send :
+
+| artist_id |
+| :-------------: |
+| _(string)_ |
+
+
+```
+{
+	"error": false,
+    "message": "",
+    "details": [
+    	{
+        	"id": (int),
+            "name": (string),
+        },
+    	{
+        	"id": (int),
+            "name": (string)
+        }
+        [...]
+    ]
+}
+```
+
+:information_source: Cypher command :
+`MATCH (a:Artist {artist_id: {artist_id}})-[:CREATED]->(al:Album) RETURN al`
+
+### Get music album.
+
+| Endpoint | Method |
+| :-------------: |:-------------:|
+| `/api/music/album` | POST |
+
+Parameters to send :
+
+| music_id |
+| :-------------: |
+| _(int)_ |
+
+
+```
+{
+	"error": false,
+    "message": "",
+    "details": [
+    	{
+        	"id": (int),
+            "name": (string),
+        }
+    ]
+}
+```
+
+:information_source: Cypher command :
+```
+MATCH (m:Music) WHERE ID(m)={music_id}
+MATCH (m)-[:IN]->(al:Album) RETURN m
+```
+
 
 ### Get music genres.
 
@@ -541,7 +607,7 @@ Parameters to send :
 
 | user_id | genre_id | limit |
 | :-----: | :---: | :----: |
-| _(int)_ | _(string)_ | _(int)_ |
+| _(int)_ | _(int)_ | _(int)_ |
 
 ```
 {
