@@ -83,11 +83,6 @@ def get_similar_artists(h5,songidx=0):
         n=n+1
     return a
 
-#    if h5.root.metadata.songs.nrows == songidx + 1:
-#        return h5.root.metadata.similar_artists[h5.root.metadata.songs.cols.idx_similar_artists[songidx]:]
-#    return h5.root.metadata.similar_artists[h5.root.metadata.songs.cols.idx_similar_artists[songidx]:
-#                                            h5.root.metadata.songs.cols.idx_similar_artists[songidx+1]]
-
 def get_duration(h5,songidx=0):
     """
     Get duration from a HDF5 song file, by default the first song in it
@@ -99,6 +94,18 @@ def get_year(h5,songidx=0):
     Get release year from a HDF5 song file, by default the first song in it
     """
     return h5.root.musicbrainz.songs.cols.year[songidx]
+
+def get_tempo(h5,songidx=0):
+    """
+    Get release year from a HDF5 song file, by default the first song in it
+    """
+    return h5.root.musicbrainz.songs.cols.tempo[songidx]
+
+def get_loudness(h5,songidx=0):
+    """
+    Get release year from a HDF5 song file, by default the first song in it
+    """
+    return h5.root.musicbrainz.songs.cols.loudness[songidx]
 
 def get_all_terms(h5,songidx=0):
     """                                                                                                                                            TEST 

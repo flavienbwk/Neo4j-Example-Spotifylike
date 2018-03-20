@@ -120,7 +120,5 @@ if __name__ == '__main__':
         else:
             print getter[4:]+" :",res
 
-    # done
-    #print 'DONE, showed song',songidx,'/',numSongs-1,'in file:',hdf5path
     h5.close()
     
