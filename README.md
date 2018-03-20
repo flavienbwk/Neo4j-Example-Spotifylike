@@ -208,5 +208,5 @@ USING PERIODIC COMMIT 50
 </pre>
 
 <p align="center">
-	<img src="https://i.imgur.com/duuDAfO.png"/>
+	<img src="https://i.imgur.com/UzHJN6s.png"/>
 </p>
