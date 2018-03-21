@@ -343,17 +343,17 @@ Parameters to send :
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         },
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         },
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         }
         [...]
     ]
@@ -398,6 +398,39 @@ Parameters to send :
 
 :information_source: Cypher command :
 `MATCH (a:Artist {artist_id: {artist_id}})-[:CREATED]->(al:Album) RETURN al`
+
+### Get music details.
+
+| Endpoint | Method |
+| :-------------: |:-------------:|
+| `/api/music/album` | POST |
+
+Parameters to send :
+
+| music_id |
+| :-------------: |
+| _(int)_ |
+
+
+```
+{
+        "error": false,
+    "message": "",
+    "details": [
+        {
+                "id": (int),
+            	"name": (string),
+		"released_in": (int)
+        }
+    ]
+}
+```
+
+:information_source: Cypher command :
+```
+MATCH (m:Music) WHERE ID(m)={music_id}
+MATCH (m)-[:RELEASED_IN]->(y:Year) RETURN m,y
+```
 
 ### Get music album.
 
@@ -495,7 +528,7 @@ Returns the music liked.
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         }
     ]
 }
@@ -523,7 +556,7 @@ Returns the music disliked.
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         }
     ]
 }
@@ -550,17 +583,17 @@ Parameters to send :
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         },
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         },
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         }
         [...]
     ]
@@ -587,17 +620,17 @@ Parameters to send :
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         },
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         },
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int)
+            "duration": (float)
         }
         [...]
     ]
@@ -625,7 +658,7 @@ Parameters to send :
     	{
         	"id": (int),
             "title": (string),
-            "duration": (int),
+            "duration": (float),
             "count": (int)
         }
     ]
