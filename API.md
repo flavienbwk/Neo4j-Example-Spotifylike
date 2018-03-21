@@ -403,7 +403,7 @@ Parameters to send :
 
 | Endpoint | Method |
 | :-------------: |:-------------:|
-| `/api/music/album` | POST |
+| `/api/music` | POST |
 
 Parameters to send :
 
