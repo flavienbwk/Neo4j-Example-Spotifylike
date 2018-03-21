@@ -6,7 +6,6 @@ This API communicates with the Neo4j database. The following pattern is always r
 
 With this Symfony API, you would be able to design your own application.
 
-
 ## API key access.
 
 The API requires an API key to secure the access to it. Well, by default, the API key is  `a94a8fe5ccb19ba61c4c0873d391e987982fbbd3`. You need to add it inside the **header** request with the key name `x-api-key`.
@@ -15,6 +14,8 @@ Modify the API key under `/symfony/src/ApiBundle/Controller/DefaultController.ph
 
 
 ## Routes
+
+:warning: This API is not secure for production. You would first for example, in every user-related query, add a token that would ensure the user is logged in.
 
 ### Check if the API is reachable.
 If you want to check is _reachable_, that you provided the right _API key_ and that the _connection with the database_ is successful, use the following route.
