@@ -420,6 +420,7 @@ Parameters to send :
         {
                 "id": (int),
             	"name": (string),
+		"duration": (float),
 		"released_in": (int)
         }
     ]
