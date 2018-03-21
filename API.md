@@ -255,37 +255,6 @@ Parameters to send :
 
 :information_source: The clear password will be processed by Symfony to create a true secure password inside Neo4j.
 
-
-### Get details of one user by its `id`.
-
-| Endpoint | Method |
-| :-------------: |:-------------:|
-| `/api/user` | POST |
-
-Parameters to send :
-
-| user_id |
-| :-------------: |
-| _(int)_ |
-
-
-```
-{
-	"error": false,
-    "message": "",
-    "details": [
-    	{
-        	"id": (int),
-            "username": (string),
-            "email": (string)
-        }
-    ]
-}
-```
-
-:information_source: Cypher command :
-`MATCH (u:User) WHERE ID(u)={user_id} RETURN u`
-
 ### Get the details of one artist.
 
 | Endpoint | Method |
