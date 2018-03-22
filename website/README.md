@@ -60,6 +60,6 @@ php bin/console server:start
 
 # OR
 
-php bin/console server:start your_ip:8000
+php bin/console server:start {your_ip}:8000
 
 ```
