@@ -412,6 +412,9 @@ Parameters to send :
 | _(int)_ |
 
 
+Is returned the title of the music, its duration, id, release date and the number of time the music has been played.
+
+
 ```
 {
         "error": false,
@@ -419,9 +422,10 @@ Parameters to send :
     "details": [
         {
                 "id": (int),
-            	"name": (string),
+            	"title": (string),
 		"duration": (float),
-		"released_in": (int)
+		"released_in": (int),
+		"count": (int)
         }
     ]
 }
@@ -430,7 +434,9 @@ Parameters to send :
 :information_source: Cypher command :
 ```
 MATCH (m:Music) WHERE ID(m)={music_id}
-MATCH (m)-[:RELEASED_IN]->(y:Year) RETURN m,y
+MATCH (m)-[:RELEASED_IN]->(y:Year)
+MATCH (:User)-[li:LISTENED]->(m)
+RETURN m,y,li.count
 ```
 
 ### Get music album.
