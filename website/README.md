@@ -33,6 +33,8 @@ Inside `./website/src/ApiBundle/DefaultController.php`, inside the `initNeo4j()`
 
 Inside `./website/src/AppBundle/RegisterController.php` at line `37` and `38`.
 
+Change the API key under `./website/src/ApiBundle/DefaultController.php` at the top of the file (`private $_api_key`).
+
 2. Install composer.
 
 Go to the `/website` directory.
