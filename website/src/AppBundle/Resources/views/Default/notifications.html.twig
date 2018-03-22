@@ -1,0 +1,15 @@
+{% for flash_error in app.flashes('flash_errors') %}
+    <div class="alert alert-danger flash-notice">
+        {{ flash_error }}
+    </div>
+{% endfor %}
+{% for flash_info in app.flashes('flash_infos') %}
+    <div class="alert alert-info flash-notice">
+        {{ flash_info }}
+    </div>
+{% endfor %}
+{% for flash_success in app.flashes('flash_successes') %}
+    <div class="alert alert-info flash-notice">
+        {{ flash_success }}
+    </div>
+{% endfor %}

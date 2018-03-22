@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleCenteredNav" aria-controls="navbarsExampleCenteredNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExampleCenteredNav">
+        <ul class="navbar-nav">
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item">
+                    <a href="{{ logout_path() }}" class="btn btn-secondary">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a href="{{ path('login') }}" class="btn btn-success">Login</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="{{ path('register') }}" class="btn btn-warning">Register</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

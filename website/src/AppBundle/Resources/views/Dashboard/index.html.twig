@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                {% if users is defined %}
+                    
+                {% else %}
+                    <div class="jumbotron">
+                        <h2>No user available.</h2>
+                        <p>We have actually no user for you to select.</p>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
