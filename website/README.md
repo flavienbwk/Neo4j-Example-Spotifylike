@@ -49,7 +49,8 @@ php -r "unlink('composer-setup.php');"
 ## 3. Install the dependencies of the website.
 
 ```
-composer install
+./composer.phar install
+php bin/console doctrine:database:create
 ```
 
 ## 4. Start the Symfony server.

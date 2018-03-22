@@ -574,7 +574,7 @@ Returns the music disliked.
 
 | Endpoint | Method |
 | :-------------: |:-------------:|
-| `/api/user/music/recommandations` | POST |
+| `/api/user/music/similars` | POST |
 
 Parameters to send :
 
@@ -611,7 +611,7 @@ Parameters to send :
 
 | Endpoint | Method |
 | :-------------: |:-------------:|
-| `/api/user/music/recommandations/genre` | POST |
+| `/api/user/music/similars/genre` | POST |
 
 Parameters to send :
 
