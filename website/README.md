@@ -2,7 +2,7 @@
 
 Please execute the following commands to set-up your Symfony instance.
 
-0. Install the required packets on your server (describe here for Debian 9).
+## 0. Install the required packets on your server (describe here for Debian 9).
 
 Install Neo4j.
 ```
@@ -25,7 +25,7 @@ Install MySQL.
 apt install mysql-server
 ```
 
-1. Change the MySQL and Neo4j database credentials in Symfony.
+## 1. Change the MySQL and Neo4j database credentials in Symfony.
 
 Inside `./website/app/config/parameters.yml` for the MySQL database.
 
@@ -35,7 +35,7 @@ Inside `./website/src/AppBundle/RegisterController.php` at line `37` and `38`.
 
 Change the API key under `./website/src/ApiBundle/DefaultController.php` at the top of the file (`private $_api_key`).
 
-2. Install composer.
+## 2. Install composer.
 
 Go to the `/website` directory.
 
@@ -46,13 +46,13 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
 
-3. Install the dependencies of the website.
+## 3. Install the dependencies of the website.
 
 ```
 composer install
 ```
 
-4. Start the Symfony server.
+## 4. Start the Symfony server.
 
 ```
 php bin/console server:start
